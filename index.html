@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap"
       rel="stylesheet"
@@ -14,10 +19,35 @@
   </head>
   <body>
     <header>
-      <div class="search"></div>
-      <div class="logo"></div>
-      <div class="session"></div>
-      <nav class="nav"></nav>
+      <div class="search">
+        <div class="search__box">
+          <label for="search"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></label>
+          <input type="text" name="search" id="search" />
+        </div>
+      </div>
+      <div class="logo">
+        <div class="avatar"></div>
+        <div class="avatar__text">
+          <p>Hi! there,</p>
+          <h3>Francisco Aguirre (@p4Ch088)</h3>
+        </div>
+      </div>
+      <div class="session">
+        <div class="session__box">
+          <i class="fa-regular fa-bell"></i>
+          <div class="avatar"></div>
+          <p>Francisco Aguirre</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Upload</a></li>
+          <li><a href="#">Share</a></li>
+        </ul>
+      </nav>
     </header>
     <aside>
       <div class="home">
@@ -66,17 +96,163 @@
     </aside>
     <main>
       <section class="projects__container">
-        <div class="projects">
-          <div class="project"></div>
-          <div class="project"></div>
-          <div class="project"></div>
-          <div class="project"></div>
-          <div class="project"></div>
-          <div class="project"></div>
+        <div class="projects__display">
+          <div class="project__title">
+            <h2>Projects</h2>
+          </div>
+          <div class="projects">
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project__text">
+                <h3>Super Cool Project</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  iusto provident similique consequuntur voluptate recusandae
+                  expedita perspiciatis et accusamus libero?
+                </p>
+              </div>
+              <div class="project__icons">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
         <section class="announcements">
-          <article class="articles"></article>
-          <article class="trending"></article>
+          <div class="title__announcements">
+            <h2>Announcements</h2>
+          </div>
+          <article class="articles">
+            <div class="announcement">
+              <h3>Site Maintenance</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                error maiores, vero similique dolore totam!
+              </p>
+            </div>
+            <div class="announcement">
+              <h3>Community Share Day</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
+                numquam excepturi minima quibusdam cumque quasi.
+              </p>
+            </div>
+            <div class="announcement">
+              <h3>Updated Privacy Policy</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                sint consequuntur, veritatis iste minima incidunt.
+              </p>
+            </div>
+          </article>
+          <div class="title__announcements">
+            <h2>Trending</h2>
+          </div>
+          <article class="trending">
+            <div class="trending__box">
+              <div class="avatar__tending avatar1"></div>
+              <div class="trending__text">
+                <h3>@tegan</h3>
+                <p>World Peace Builder</p>
+              </div>
+            </div>
+            <div class="trending__box">
+              <div class="avatar__tending avatar2"></div>
+              <div class="trending__text">
+                <h3>@johnwest</h3>
+                <p>Super Cool Project</p>
+              </div>
+            </div>
+            <div class="trending__box">
+              <div class="avatar__tending avatar3"></div>
+              <div class="trending__text">
+                <h3>@kendall</h3>
+                <p>Life Changing App</p>
+              </div>
+            </div>
+            <div class="trending__box">
+              <div class="avatar__tending avatar4"></div>
+              <div class="trending__text">
+                <h3>@alex</h3>
+                <p>No Traffic Maker</p>
+              </div>
+            </div>
+          </article>
         </section>
       </section>
     </main>

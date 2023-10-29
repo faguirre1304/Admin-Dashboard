@@ -4,6 +4,13 @@
   --blue: #0174be;
   --yellow: #ffc436;
   --wedding: #fff0ce;
+
+  --shadow: 0 4px 5px #a2a2a2;
+
+  --avatar1: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/06fbe298931623.5ee79b6a90221.jpg);
+  --avatar2: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/2e80bb98931623.5ee79b6a8f342.jpg);
+  --avatar3: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/8394f798931623.5ee79b6a909ea.jpg);
+  --avatar4: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/baa20698931623.5ee79b6a8ec2b.jpg);
 }
 
 /* reset */
@@ -145,7 +152,7 @@ body {
   font-family: var(--font);
   display: grid;
   grid-template-columns: 350px 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 200px 1fr;
   grid-template-areas:
     "aside header"
     "aside main";
@@ -154,7 +161,7 @@ body {
 /* header */
 
 header {
-  min-height: 200px;
+  /* min-height: 200px; */
   background-color: var(--blue);
   padding: 1rem;
   grid-area: header;
@@ -164,26 +171,150 @@ header {
   grid-template-areas:
     "search session"
     "logo nav";
+  box-shadow: var(--shadow);
+  z-index: 2;
 }
 
 header .search {
   grid-area: search;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .search__box {
+  width: 100%;
+  /* background-color: #0174be; */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search__box label {
+  color: var(--wedding);
+  font-size: 1.4rem;
+}
+
+.search input {
+  width: 90%;
+  padding: 0.3rem 0.6rem;
+
+  outline: none;
+  border: none;
+  font-family: var(--font);
+  font-size: 1.1rem;
+  color: #0c356a;
+  background: none;
+  border-bottom: 2px solid var(--wedding);
 }
 
 header .logo {
   grid-area: logo;
-  background-color: antiquewhite;
+
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 15px;
+}
+
+.logo .avatar {
+  width: 70px;
+  height: 70px;
+  background: var(--avatar1) center center / cover no-repeat;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.logo .avatar__text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.avatar__text p {
+  font-size: 1.4rem;
+  color: var(--wedding);
+  letter-spacing: 1.1px;
+  font-weight: 400;
+}
+.avatar__text h3 {
+  font-size: 1.5rem;
+  color: var(--wedding);
+  letter-spacing: 1.1px;
+  font-weight: 500;
 }
 
 header .session {
-  background-color: aqua;
+  /* background-color: aqua; */
   grid-area: session;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.session .session__box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.session__box .avatar {
+  width: 60px;
+  height: 60px;
+  background: var(--avatar1) center center / cover no-repeat;
+  border-radius: 50%;
+}
+
+.session__box i {
+  font-size: 1.5rem;
+  color: var(--wedding);
+  margin-right: 1.5rem;
+}
+
+.session__box p {
+  font-size: 1.4rem;
+  color: var(--wedding);
+  letter-spacing: 1.2px;
 }
 
 header .nav {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.nav ul a {
+  padding: 0.3rem 1.5rem;
+  background-color: var(--yellow);
+  color: var(--blue);
+  border-radius: 10px;
+  letter-spacing: 1.2px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.nav a:hover {
+  background-color: var(--wedding);
 }
 
 /* finish header */
@@ -201,6 +332,7 @@ aside {
     "home"
     "menu"
     "support";
+  z-index: 3;
 }
 
 aside .home {
@@ -296,53 +428,208 @@ aside .support {
 main {
   grid-area: main;
   padding: 1rem;
-  background-color: #ffc436;
+  /* background-color: #ffc436; */
 }
 
 .projects__container {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 350px;
   grid-template-rows: 1fr 1fr;
-  background-color: #0c356a;
+  background-color: #f2f2f2;
   grid-template-areas:
-    "projects announcements"
-    "projects announcements";
+    "projects__display announcements"
+    "projects__display announcements";
+  gap: 1rem;
 }
 
-.projects__container .projects {
+.projects__display {
+  grid-area: projects__display;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title    title    title"
+    "projects projects projects";
+  gap: 1rem;
+}
+
+.projects__display .project__title {
+  grid-area: title;
+}
+
+.project__title h2 {
+  color: var(--blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.projects__display .projects {
   grid-area: projects;
-  background-color: #0174be;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr auto;
-  gap: 10px;
-  padding: 1rem;
+  gap: 1rem;
 }
 
 .projects .project {
-  background-color: #fff0ce;
+  background-color: #f2f2f2;
+  border-left: 18px solid #ffc436;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.project .project__text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.project__text h3 {
+  font-size: 1.4rem;
+  color: var(--yellow);
+  letter-spacing: 1.2px;
+}
+
+.project__text p {
+  font-size: 1.2rem;
+  text-wrap: balance;
+  line-height: 1.5rem;
+  color: var(--Navy);
+  font-weight: 300;
+}
+
+.project__icons {
+  width: 100%;
+
+  display: flex;
+  gap: 2rem;
+  justify-content: end;
+  align-items: center;
+}
+
+.project__icons a {
+  text-decoration: none;
+  color: #ffc436;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.project__icons a:hover {
+  color: #0174be;
 }
 
 .projects__container .announcements {
   grid-area: announcements;
-  background-color: #fff0ce;
-}
-
-.announcements {
+  /* background-color: black; */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  padding: 1rem;
+  grid-template-rows: auto 1fr auto 1fr;
+  gap: 1rem;
+}
+
+.title__announcements h2 {
+  color: var(--blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 
 .announcements .articles {
-  background-color: #0174be;
+  background-color: var(--wedding);
+}
+
+.articles {
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.articles h3 {
+  padding-bottom: 0.3rem;
+  color: var(--yellow);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.articles p {
+  font-size: 0.9rem;
+  color: #0c356a;
 }
 
 .announcements .trending {
-  background-color: aquamarine;
+  background-color: var(--wedding);
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
 }
 
-/* finish main */
+.trending .avatar__trending {
+  width: 50px;
+  height: 50px;
+} /* finish main */
+
+.trending .avatar1 {
+  width: 50px;
+  height: 50px;
+  background: var(--avatar1) center center / cover no-repeat;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+.trending .avatar2 {
+  width: 50px;
+  height: 50px;
+  background: var(--avatar2) center center / cover no-repeat;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+.trending .avatar3 {
+  width: 50px;
+  height: 50px;
+  background: var(--avatar3) center center / cover no-repeat;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+.trending .avatar4 {
+  width: 50px;
+  height: 50px;
+  background: var(--avatar4) center center / cover no-repeat;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.trending .trending__box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trending__box .trending__text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.4rem;
+}
+
+.trending__text h3 {
+  color: #0c356a;
+  font-size: 1.1rem;
+}
+
+.trending__text p {
+  font-weight: 300;
+  color: var(--yellow);
+}
